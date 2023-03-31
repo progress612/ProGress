@@ -70,7 +70,7 @@ idea of improvement from GLM to GAM
 pros of GAM's design
 exp. family -> GLM -> GAM
 what if some variable are categorical
-various froms of GAM
+various forms of GAM
 how to get GAM models solved
 what is the assumption when solving GAM
 what if input matrix is singular
