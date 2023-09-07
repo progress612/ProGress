@@ -18,6 +18,8 @@
 
 ## Lect01: Intro
 
+![Evaluation](./assets/Evaluation.png)
+
 ## +sp21 Lab01: Environment Setup (some common things)
 
 > In-person lab sections are an excellent place to find groups.
@@ -55,7 +57,7 @@ $ git pull --rebase --allow-unrelated-histories skeleton master
 
 > For ease of navigation, this crash course has been split up into several parts. Feel free to skim and read at whatever pace you feel comfortable with. You can start the exercises even before you finish reading part A - we recommend doing the reading and the exercises concurrently.
 
-How to get the length of a `String` or an `Array`?
+How to get the length of a `String` or an `Array`? [think what makes the difference]
 When does `this` cannot be omitted?
 static vs instance members?
 
@@ -66,11 +68,11 @@ What types can apply foreach loop?
 
 ## Lect02: Defining and Using Classes
 
-Constructors in Java and Python?
+Constructors in Java and Python? Why we only need to recompile `DogLauncher.java`?
 Understanding `public static void main(String[] args)` [command line arguments]
 Do all classes have a main method? What if not? [also think about the main function in Python]
 Why static methods? When will static method access instance variables?
-What happens for a static variable? Is that good?
+What happens for a static variable? Is that good? [weird!]
 
 **Design philosophy**
 
@@ -98,18 +100,20 @@ Model-View-Controller (MVC) pattern and Observer pattern
 
 > If nothing pops up, it means your setup is incorrect. You should redo the above steps to make sure you didn’t miss anything, but don’t spend more than 10 minutes on this. It’s best to get setup problems fixed with a TAs help, meaning you should post on Ed or go to Office Hours. If you post on Ed, you need to tell us **everything** you’ve done/tried so we can get a clear picture of what the error is. Include screenshots of everything, especially any error messages you might get.
 
-Intelli weird
+Intelli weird: code compiles and runs correctly, but you still get red underlines in IntelliJ, solved by `Invalidate Caches / Restart`
 
-code compiles and runs correctly, but you still get red underlines in IntelliJ
+Note:
 
-`Invalidate Caches / Restart`
+
 
 ## Lect03: References, Recursion, and Lists
 
 primary type vs reference type
-How do computer storages/bits work?
-What is the golden rule for `= ` (GRoE)
+How and when do computer storages/bits work? [usage of `new`]
 
+> Java does not write anything into the reserved box when a variable is declared. In other words, there are no default values. As a result, the Java compiler prevents you from using a variable until after the box has been filled with bits using the `=` operator. For this reason, I have avoided showing any bits in the boxes in the figure above.
+
+What is the golden rule for `= ` (GRoE)
 State what happens for:
 
 ```java
@@ -192,7 +196,7 @@ public class SLList() {
             p = new IntNodes(x, null); 
         } else if {
         	while (p.next != null) {
-            p = p.next;
+            	p = p.next;
             }
             p.next = new IntNode(x, null);	// Recall the knowledge of reference variables   
         }
@@ -232,9 +236,10 @@ What if cases for primary types like int?
 
 **Arrays**
 
-What is array?
-Array's features?
-Array's creation, access
+What is an array?
+Array's features? Compared with classes?
+Array's creation, access?
+Why `arraycopy` is important?
 Bound checking time?
 Java arrays vs other language arrays?
 
@@ -246,7 +251,7 @@ Java arrays vs other language arrays?
 
 [【CS61B-21sp】lab1 git push+lab2 set up 问题和解决办法](https://blog.csdn.net/weixin_73040495/article/details/131417262)
 
-## +sp21 Lab2: Debugging
+## +sp21 Lab2: Debugging (IMPORTANT)
 
 > Somewhere in our code there is a bug, but don’t go carefully reading the code for it! While you might be able to spot this particular bug, often bugs are nearly impossible to see without actually trying to run the code and probe what’s going on as it executes.
 
@@ -270,3 +275,22 @@ Java `||`  and JavaScript `||`
 > You’ll potentially save yourself a lot of trouble vs. guess-and-check with git commands. If you find yourself trying to use commands recommended by Google like `force push`, [don’t](https://twitter.com/heathercmiller/status/526770571728531456). **Don’t use force push, even if a post you found on Stack Overflow says to do it!**
 
 What is a package and why we need them?
+
+> Remember that the Java garbage collector will “delete” things for us if and only if there are no pointers to that object.
+
+## Lect06: Testing @TODO: + fa23
+
+How do programmers know their code work?
+What is the unit testing and why is it good? [concrete mini-goals]
+Can I use `input == expected` to check the equality of two arrays? How to comare two strings?
+How to write a unit test? How can we import the tested classes?
+Should the test function be `static`? [weird!]
+design error: wrong abstraction
+
+> Making silly errors like this is normal and really easy to do, so don't sweat it if you find yourself doing something similar. Iterating on a design is part of the process of writing code.
+
+**How to apply recusive helper function?**
+When does Java Visualizer do better than normal debugger?
+
+What is the TDD process?
+ADD vs. TDD vs. unit tests vs. integration testing 
